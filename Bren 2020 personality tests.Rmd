@@ -1,0 +1,38 @@
+---
+title: "Cohort Personality Quiz"
+author: "Robert Saldivar"
+date: "December 20, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#Loading Packages
+library(tidyverse)
+
+```
+
+```{r}
+# Read in data
+personality_tests <- read_csv("Bren 2020 personality tests - Sheet1.csv")
+```
+
+```{r}
+#Creating individual data sets of personality types
+Hogwarts_house <- personality_tests %>%
+  select("Hogwarts House")
+
+Astology <- personality_tests %>%
+  select("Astrology Sign")
+
+Sparketype <- personality_tests %>%
+  select("Sparketype", "Shadow Sparketype") 
+
+Patronus <- personality_tests %>%
+  select("Pottermore Patronus", "Patronus Animal Caterogry", "Patronus Danger Rating")
+
+```
+
